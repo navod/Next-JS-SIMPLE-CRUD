@@ -43,7 +43,7 @@ function Table() {
         </tr>
       </thead>
       <tbody className="bg-gray-200">
-        {data.map((obj, index) => (
+        {data?.map((obj, index) => (
           <TR data={obj} key={obj._id} />
         ))}
       </tbody>
@@ -54,7 +54,7 @@ function Table() {
 export default Table;
 
 function TR(props) {
-  const visible = useSelector(state => state.app.client.toggleForm);
+  const visible = useSelector((state) => state.app.client.toggleForm);
   const dispatch = useDispatch();
 
   const onUpdate = () => {
