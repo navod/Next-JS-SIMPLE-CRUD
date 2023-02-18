@@ -20,13 +20,12 @@ export default async function handler(req, res) {
       middleware(req, res, () => {
         getUsers(req, res);
       });
-
       break;
     case "POST":
       middleware(req, res, () => {
         addUsers(req, res);
       });
-
+      break;
     default:
       res.setHeader("Allow", ["GET", "POST", "PUT", "DELETE"]);
       res.status(405).end(`Method ${method} Not Allowd`);
